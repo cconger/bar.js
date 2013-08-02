@@ -1,0 +1,21 @@
+Bar.js
+
+Take your cereal bowl of callbacks and turn them into a serial bar(.js)
+
+Simple control flow library that allows for OO Programming due to nested excution being handled.
+
+Run tests:
+
+npm install requirejs jasmine-node
+jasmine-node --runWithRequireJs spec/
+
+
+For examples see tests for now.
+
+TODO:
+  * Add .map
+  * Add .forever and .BREAK for main looping functions
+  * Add CoffeeScript Wrapper
+  * Write better docs
+  * Write more tests
+
