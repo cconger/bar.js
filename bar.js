@@ -5,7 +5,7 @@ define(function() {
     this.functions = functions;
     this.lastResult = new Value(result);
     this.waitingForCallback = false;
-    this.dependantQueue = null;
+    this.dependentQueue = null;
   };
 
   var Value = function(val) {
@@ -25,7 +25,7 @@ define(function() {
         queue.waitingForCallback = true;
         break;
       } else if (res instanceof Queue) {
-        res.dependantQueue = queue;
+        res.dependentQueue = queue;
         if (res.waitingForCallback) {
           break;
         } else {
@@ -39,8 +39,8 @@ define(function() {
       var fn = queue.functions.shift();
     }
     if(!fn) {
-      if (queue.dependantQueue) {
-        next(queue.dependantQueue, queue.lastResult || overrideValue)
+      if (queue.dependentQueue) {
+        next(queue.dependentQueue, queue.lastResult || overrideValue)
       }
     }
 
